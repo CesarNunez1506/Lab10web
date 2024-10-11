@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body>
+    <div class="container mx-auto mt-8">
+        <h1 class="text-2xl font-bold mb-4">Lista de Usuarios</h1>
+        <table class="min-w-full bg-white border-collapse">
+            <thead>
+                <tr>
+                    <th class="px-4 py-2 border">ID</th>
+                    <th class="px-4 py-2 border">Nombre</th>
+                    <th class="px-4 py-2 border">Apellido</th>
+                    <th class="px-4 py-2 border">Email</th>
+                    <th class="px-4 py-2 border">Contraseña</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="user : ${users}">
+                    <td class="px-4 py-2 border" th:text="${user.id}"></td>
+                    <td class="px-4 py-2 border" th:text="${user.name}"></td>
+                    <td class="px-4 py-2 border" th:text="${user.lastname}"></td>
+                    <td class="px-4 py-2 border" th:text="${user.email}"></td>
+                    <td class="px-4 py-2 border" th:text="${user.password}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
